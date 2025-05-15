@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@layer components {
+  .div {
+    @apply border rounded-md text-center;
+  }
+  .img {
+    @apply h-[180px] w-[180px] rounded-md;
+  }
+}
