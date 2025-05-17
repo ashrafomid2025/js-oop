@@ -167,14 +167,8 @@
   .flex {
     display: flex;
   }
-  .h-\[180px\] {
-    height: 180px;
-  }
   .w-\[80\%\] {
     width: 80%;
-  }
-  .w-\[180px\] {
-    width: 180px;
   }
   .justify-between {
     justify-content: space-between;
