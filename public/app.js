@@ -11,13 +11,20 @@ class SingleProduct {
     constructor(pro){
         this.product = pro;
     }
+    addToCart(){
+        console.log("adding to cart....");
+        console.log(this.product);
+    }
     showSingleProduct(){
         const divChild = document.createElement("div");
         divChild.className = "div";
         divChild.innerHTML = `
         <img src ="${this.product.imgUrl}" class="img">
         <h1>${this.product.name}</h1>
+        <button class= "button">Add to Cart</button>
         `
+        const button = divChild.querySelector("button");
+        button.addEventListener("click",this.addToCart.bind(this));
        return divChild;
     }
 }

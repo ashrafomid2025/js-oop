@@ -6,4 +6,7 @@
   .img {
     @apply h-[180px] w-[180px] rounded-md;
   }
+  .button {
+    @apply px-4 py-3 my-3 bg-purple-600 text-white;
+  }
 }
