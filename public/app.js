@@ -20,31 +20,26 @@ class SingleProduct {
         divChild.className = "div";
         divChild.innerHTML = `
         <img src ="${this.product.imgUrl}" class="img">
-        <h1>${this.product.name}</h1>
-        <button class= "button">Add to Cart</button>
-        `
-        const button = divChild.querySelector("button");
-        button.addEventListener("click",this.addToCart.bind(this));
+        <h1>${this.product.name}</h1>`;
+
        return divChild;
     }
 }
 
 class ProductList {
     products =  [
-        new Product("Bike","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbRyANT0TS-3KAXPlkdbDMDX1WncFqVdSrjrvaXIUE31vusdjsef1N22MZVHBktlyNBDA&usqp=CAU")
+        new Product("Refrigrator","https://image-us.samsung.com/SamsungUS/home/home-appliances/refrigerators/3-door-french-door/05232024/RF32CG5900SR_01_Stainless_Steel_SCOM.jpg?$product-details-jpg$")
         ,
-        new Product("Race","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYG3VcZRb1ksgWwgeTtmZvgB1y1PGkX9XBqQaPHF3cLMhv7YTMu9Bn3y7jcvrMlVpFwGY&usqp=CAU")
+         new Product("Fan","https://izone.com.pk/wp-content/uploads/2022/04/IZONE-PEDISTAL-FAN-AB-24COPR-HVY-DUTY-Black-min-scaled.jpg")
         ,
-        new Product("Race","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYG3VcZRb1ksgWwgeTtmZvgB1y1PGkX9XBqQaPHF3cLMhv7YTMu9Bn3y7jcvrMlVpFwGY&usqp=CAU")
-        , 
-        new Product("Race","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYG3VcZRb1ksgWwgeTtmZvgB1y1PGkX9XBqQaPHF3cLMhv7YTMu9Bn3y7jcvrMlVpFwGY&usqp=CAU")
-        , 
-        new Product("Race","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYG3VcZRb1ksgWwgeTtmZvgB1y1PGkX9XBqQaPHF3cLMhv7YTMu9Bn3y7jcvrMlVpFwGY&usqp=CAU")
-        , 
-        new Product("Race","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYG3VcZRb1ksgWwgeTtmZvgB1y1PGkX9XBqQaPHF3cLMhv7YTMu9Bn3y7jcvrMlVpFwGY&usqp=CAU")
-        , 
-        new Product("Race","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYG3VcZRb1ksgWwgeTtmZvgB1y1PGkX9XBqQaPHF3cLMhv7YTMu9Bn3y7jcvrMlVpFwGY&usqp=CAU")
-        , 
+         new Product("Window AC","https://livpure.com/cdn/shop/articles/family-spending-time-together-outside_23-2148659464_e0d1fe68-5a26-488e-a17e-c1486f0d3d89-131818.jpg?v=1726725415")
+         ,
+          new Product("Wifi Router","https://www.batna24.com/img2/1000/134667_1.webp")
+          ,
+          new Product("Water Cleaner","https://m.media-amazon.com/images/I/71VR+yJUxIL._AC_UF1000,1000_QL80_.jpg")
+          ,
+           new Product("Laptop Desktop","https://media.wired.com/photos/629a5c0d3131584d31836046/master/pass/Laptop-Second-Display-Gear-GettyImages-1367337688.jpg")
+    
     ];
 
 constructor(){}
