@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @layer components {
-  .div {
+  /* .div {
     @apply border rounded-md text-center;
   }
   .img {
@@ -8,5 +8,11 @@
   }
   .button {
     @apply px-4 py-3 my-3 bg-purple-600 text-white;
+  } */
+  .div {
+    @apply text-center h-[300px] w-[200px] border border-green-300 p-4 rounded-md hover:blur-xs;
+  }
+  .img {
+    @apply h-[180px] w-full rounded-md;
   }
 }

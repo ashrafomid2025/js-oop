@@ -3,63 +3,53 @@
 // product: name, color, price, quatity, quality
 // class => 
 
-class Product{
-    name;
+
+
+//class =>  instance of an object
+
+class Mobile{
+    tilte;
+    imgUrl;
     price;
-    constructor(name, price){
-        this.name = name;
+    description;
+    constructor(title, imagUrl, price, description){
+        this.title = title;
+        this.imgUrl = imagUrl;
         this.price = price;
+        this.description = description;
     }
 }
 
-const produtList = {
+const productList = {
     products: [
-    new Product("Pen",100),
-     new Product("Book",300),
-      new Product("Notebook",10),
-       new Product("Marker",20),
-        new Product("Board",1000),
-         
-],
- showList(){
-    // for of
-   const div = document.getElementById("app")
-    // for each
-    for(let item of this.products){
-       const h1 =  document.createElement("h1");
-       h1.textContent = `The product is ${item.name} and it's price is \$ ${item.price}`;
-        div.appendChild(h1);
+        new Mobile("Iphone 13","../public/images/iphone13.jpeg","1300","New Model Of Apple Mobile")
+       ,
+       new Mobile("Iphone 13","../public/images/iphone13.jpeg","1300","New Model Of Apple Mobile")
+       ,
+       new Mobile("Iphone 13","../public/images/iphone13.jpeg","1300","New Model Of Apple Mobile")
+       ,
+       new Mobile("Iphone 13","../public/images/iphone13.jpeg","1300","New Model Of Apple Mobile")
+       ,
+       new Mobile("Iphone 13","../public/images/iphone13.jpeg","1300","New Model Of Apple Mobile")
+       ,
+       new Mobile("Iphone 13","../public/images/iphone13.jpeg","1300","New Model Of Apple Mobile")
+       ,
+    ],
+   showMobiles(){
+      const divParent = document.getElementById("app");
+    //   for of 
+    this.products.forEach((mobile)=>{
+       const divChild=  document.createElement("div");
+       divChild.className = "div";
+       divChild.innerHTML = `
+       <h1>${mobile.title}</h1>
+       <img src = "${mobile.imgUrl}" class ="img">
+       <h2>${mobile.price}</h2>
+       <p>${mobile.description} </p>
+       `
+       divParent.append(divChild);
+    })
     }
 }
 
-}
-produtList.showList();
-
-
-
-// human: walk(), eat(), sleep(), work(), runing(), name, lastName, age, gender
-class Human{
-    name;
-    lastName; 
-    age;
-    gender;
-    constructor(name, lastName, age, gender){
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-        this.gender = gender
-    }
-
-    walk(){
-        console.log("I am walking");
-    }
-    work(){
-        console.log("I am working");
-    }
-    running(){
-        console.log("I am running");
-    }
-}
-
-
-const fawzia = new Human("Fawzia","Hussaini",19,"Female");
+productList.showMobiles();
