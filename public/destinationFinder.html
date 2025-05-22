@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="dest.js" defer></script>
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body>
+    <div
+      class="font-yekan h-screen w-full flex justify-center items-center bg-cover bg-[url(../public/images/b1.jpg)]"
+    >
+      <div
+        class="border w-[80%] mx-auto border-red-500 bg-cover p-4 outline outline-amber-500 rounded-2xl outline-offset-[15px] bg-[url(../public/images/b2.jpg)]"
+      >
+        <h1 class="text-center font-bold text-2xl text-yellow-400">
+          فاصله یاب
+        </h1>
+        <div class="flex w-full gap-1.5 justify-evenly">
+          <div>
+            <div class="inline-block my-4">
+              <button class="py-3 px-4 bg-yellow-400">فاصله</button>
+              <button class="py-3 px-4 bg-yellow-400">زمان</button>
+            </div>
+            <div>
+              <select
+                class="py-3 focus:outline-none my-2 px-10 rounded-tl-2xl rounded-br-2xl bg-yellow-400"
+                name=""
+                id="city"
+              >
+                <option value="kabul">کابل</option>
+                <option value="ghazni">غزنی</option>
+                <option value="kandahar">کندهار</option>
+                <option value="mazar">مزار شریف</option>
+                <option value="herat">هرات</option>
+                <option value="jalalabad">جلال آباد</option>
+              </select>
+            </div>
+            <select
+              class="py-3 focus:outline-none my-2 px-10 rounded-tl-2xl rounded-br-2xl bg-yellow-400"
+              name=""
+              id="maqsad"
+            >
+              <option value="kabul">کابل</option>
+              <option value="ghazni">غزنی</option>
+              <option value="kandahar">کندهار</option>
+              <option value="mazar">مزار شریف</option>
+              <option value="herat">هرات</option>
+              <option value="jalalabad">جلال آباد</option>
+            </select>
+            <div>
+              <div>
+                <label for="" class="text-yellow-400 float-start font-bold"
+                  >سرعت تان را وارد نمایید</label
+                >
+              </div>
+              <input
+                class="bg-yellow-400 my-2 rounded-tl-2xl rounded-br-2xl focus:outline-none py-2 px-5"
+                type="text"
+                placeholder="سرعت را به کیلومتر وارد کنید"
+              />
+            </div>
+            <button
+              class="bg-yellow-400 py-3 px-5 rounded-tl-2xl rounded-br-2xl"
+            >
+              دریافت فاصله زمانی
+            </button>
+            <div>
+              <h1
+                class="bg-yellow-400 rounded-tl-3xl rounded-tr-3xl text-white py-3 px-4 font-bold text-center my-4"
+              >
+                <span id="seconds">00</span>
+                <span>:</span>
+                <span id="minutes">00</span>
+                <span>:</span>
+                <span id="hours">00</span>
+              </h1>
+            </div>
+          </div>
+          <div class="w-[50%]">
+            <img class="w-full" src="../public/images/map.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
