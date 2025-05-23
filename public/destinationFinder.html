@@ -26,7 +26,6 @@
             <div>
               <select
                 class="py-3 focus:outline-none my-2 px-10 rounded-tl-2xl rounded-br-2xl bg-yellow-400"
-                name=""
                 id="city"
               >
                 <option value="kabul">کابل</option>
@@ -43,7 +42,7 @@
               id="maqsad"
             >
               <option value="kabul">کابل</option>
-              <option value="ghazni">غزنی</option>
+              <option value="ghazni" selected>غزنی</option>
               <option value="kandahar">کندهار</option>
               <option value="mazar">مزار شریف</option>
               <option value="herat">هرات</option>
@@ -56,19 +55,26 @@
                 >
               </div>
               <input
+                id="sorat"
                 class="bg-yellow-400 my-2 rounded-tl-2xl rounded-br-2xl focus:outline-none py-2 px-5"
                 type="text"
                 placeholder="سرعت را به کیلومتر وارد کنید"
               />
             </div>
             <button
+              id="btn"
               class="bg-yellow-400 py-3 px-5 rounded-tl-2xl rounded-br-2xl"
             >
               دریافت فاصله زمانی
             </button>
+            <!--  -->
+            <div
+              id="showMessage"
+              class="p-4 hidden text-center font-semibold bg-yellow-400 my-2 rounded-md"
+            ></div>
             <div>
               <h1
-                class="bg-yellow-400 rounded-tl-3xl rounded-tr-3xl text-white py-3 px-4 font-bold text-center my-4"
+                class="text-white bg-yellow-400 py-3 px-4 font-bold text-center my-4"
               >
                 <span id="seconds">00</span>
                 <span>:</span>
