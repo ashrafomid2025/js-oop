@@ -11,7 +11,9 @@
     --color-amber-500: oklch(76.9% 0.188 70.08);
     --color-yellow-400: oklch(85.2% 0.199 91.936);
     --color-green-300: oklch(87.1% 0.15 154.449);
+    --color-purple-500: oklch(62.7% 0.265 303.9);
     --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-2xl: 1.5rem;
@@ -20,8 +22,6 @@
     --font-weight-bold: 700;
     --radius-md: 0.375rem;
     --radius-2xl: 1rem;
-    --radius-3xl: 1.5rem;
-    --blur-xs: 4px;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-yekan: "B Yekan";
@@ -239,12 +239,6 @@
   .rounded-tl-2xl {
     border-top-left-radius: var(--radius-2xl);
   }
-  .rounded-tl-3xl {
-    border-top-left-radius: var(--radius-3xl);
-  }
-  .rounded-tr-3xl {
-    border-top-right-radius: var(--radius-3xl);
-  }
   .rounded-br-2xl {
     border-bottom-right-radius: var(--radius-2xl);
   }
@@ -335,8 +329,8 @@
 @import url("../public/fonts/Yekan.ttf");
 @layer components {
   .div {
-    height: 300px;
-    width: 200px;
+    height: fit-content;
+    width: 230px;
     border-radius: var(--radius-md);
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -345,8 +339,7 @@
     text-align: center;
     &:hover {
       @media (hover: hover) {
-        --tw-blur: blur(var(--blur-xs));
-        filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+        border-color: var(--color-red-500);
       }
     }
   }
@@ -354,6 +347,21 @@
     height: 180px;
     width: 100%;
     border-radius: var(--radius-md);
+  }
+  .btn {
+    border-radius: var(--radius-md);
+    background-color: var(--color-purple-500);
+    padding-inline: calc(var(--spacing) * 4);
+    padding-block: calc(var(--spacing) * 3);
+    color: var(--color-white);
+  }
+  .divTotal {
+    width: 100%;
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-black);
+    padding: calc(var(--spacing) * 4);
+    text-align: center;
   }
 }
 @property --tw-border-style {
@@ -370,78 +378,12 @@
   inherits: false;
   initial-value: solid;
 }
-@property --tw-blur {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-brightness {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-contrast {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-grayscale {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-hue-rotate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-invert {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-opacity {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-saturate {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-sepia {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-drop-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-drop-shadow-size {
-  syntax: "*";
-  inherits: false;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-outline-style: solid;
-      --tw-blur: initial;
-      --tw-brightness: initial;
-      --tw-contrast: initial;
-      --tw-grayscale: initial;
-      --tw-hue-rotate: initial;
-      --tw-invert: initial;
-      --tw-opacity: initial;
-      --tw-saturate: initial;
-      --tw-sepia: initial;
-      --tw-drop-shadow: initial;
-      --tw-drop-shadow-color: initial;
-      --tw-drop-shadow-alpha: 100%;
-      --tw-drop-shadow-size: initial;
     }
   }
 }

@@ -14,9 +14,15 @@
     @apply px-4 py-3 my-3 bg-purple-600 text-white;
   } */
   .div {
-    @apply text-center h-[300px] w-[200px] border border-green-300 p-4 rounded-md hover:blur-xs;
+    @apply text-center h-fit w-[230px] border border-green-300 p-4 rounded-md hover:border-red-500;
   }
   .img {
     @apply h-[180px] w-full rounded-md;
+  }
+  .btn {
+    @apply py-3 px-4 bg-purple-500 text-white rounded-md;
+  }
+  .divTotal {
+    @apply border border-black p-4 text-center w-full;
   }
 }
