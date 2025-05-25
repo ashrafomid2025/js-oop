@@ -3,6 +3,9 @@
 // product: name, color, price, quatity, quality
 // class => 
 
+// duplication 
+// error, 
+
 
 // functional based : code 
 // functional based programming
@@ -22,17 +25,14 @@ class Mobile{
     }
 }
 
-class AddtoCart{
-    constructor(){
-
-    }
-    showAddToCart(){
+class AddToCart{
+    items = [];
+    showTotal(){
         const div = document.createElement("div");
-        div.className = "divTotal";
         div.innerHTML = 
         `
-        <span> Total: </span>
-        <span>  $1400 </span>
+        <h1>Total: ${0} </h1>
+        <button>Order Now!</button>
         `
         return div;
     }
@@ -42,27 +42,28 @@ class ShowSingleMobile{
     constructor(product){
         this.product = product;
     }
+    addToCart(){
+        console.log("add to Cart");
+        console.log(this.product);
+    }
     show(){
      const divChild=  document.createElement("div");
        divChild.className = "div";
        divChild.innerHTML = `
-       <h1>${this.product.title}</h1>
+       <h1> ${this.product.title}</h1>
        <img src = "${this.product.imgUrl}" class ="img">
-       <h2>${this.product.price}</h2>
+       <h2>\$ ${this.product.price}</h2>
        <p>${this.product.description} </p>
        <button class= "btn">Add to Cart</button>`;
        const btn = divChild.querySelector("button");
-       btn.addEventListener("click",()=>{
-        console.log("Adding to cart....");
-        console.log(this.product);
-       })
+       btn.addEventListener("click",this.addToCart.bind(this));
        return divChild;
     }
 }
 
 // oop oraganized, clean
-const productList = {
-    products: [
+class ProductList{
+    products= [
         new Mobile("Iphone 13","../public/images/iphone13.jpeg","1300","New Model Of Apple Mobile")
        ,
        new Mobile("Iphone 15","../public/images/iphone15.jpeg","1300","New Model Of Apple Mobile")
@@ -75,13 +76,14 @@ const productList = {
        ,
        new Mobile("Samsung A21","../public/images/samsung-a21.jpeg","1300","New Model Of Apple Mobile")
        ,
-    ],
+    ];
+    constructor(){
+
+    }
    showMobiles(){
-      const divParent = document.getElementById("app");
-     const addtoCart =  new AddtoCart();
-     const div = addtoCart.showAddToCart();
-     divParent.append(div);
+
     this.products.forEach((mobile)=>{
+        const divParent = document.getElementById("app");
        const singleMobile =  new ShowSingleMobile(mobile);
         const div = singleMobile.show();
        divParent.append(div);
@@ -89,4 +91,19 @@ const productList = {
     }
 }
 
-productList.showMobiles();
+class Page{
+    showEntirePage(){
+       const divParent = document.getElementById("app");
+       const addTOCart =  new AddToCart();
+       const divTotal = addTOCart.showTotal();
+       divParent.append(divTotal);
+        const productList = new ProductList();
+        const divProducts =  productList.showMobiles();
+        console.log(productList.showMobiles());
+        divParent.append(divProducts);
+    }
+}
+
+const page = new Page();
+page.showEntirePage();
+
