@@ -47,7 +47,7 @@ class ShowSingleMobile{
         console.log(this.product);
     }
     show(){
-     const divChild=  document.createElement("div");
+       const divChild = document.createElement("div");
        divChild.className = "div";
        divChild.innerHTML = `
        <h1> ${this.product.title}</h1>
@@ -81,15 +81,14 @@ class ProductList{
 
     }
    showMobiles(){
-
-    this.products.forEach((mobile)=>{
-        const divParent = document.getElementById("app");
-       const singleMobile =  new ShowSingleMobile(mobile);
+    
+     const divchild = document.createElement("div");
+     for(let item of this.products){
+        const singleMobile = new ShowSingleMobile(item);
         const div = singleMobile.show();
-       divParent.appendChild(div);
-    }
-)
-r
+        divchild.append(div);
+     }
+     return divchild;
     }
 }
 
