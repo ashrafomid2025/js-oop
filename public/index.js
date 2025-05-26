@@ -86,8 +86,10 @@ class ProductList{
         const divParent = document.getElementById("app");
        const singleMobile =  new ShowSingleMobile(mobile);
         const div = singleMobile.show();
-       divParent.append(div);
-    })
+       divParent.appendChild(div);
+    }
+)
+r
     }
 }
 
