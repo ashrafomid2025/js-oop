@@ -6,6 +6,16 @@
 // duplication 
 // error, 
 
+class Person{
+    name;
+  lastName;
+    constructor(name,lastName){
+      this.name = name;
+      this.lastName = lastName;  
+    }
+}
+
+
 
 // functional based : code 
 // functional based programming
@@ -27,13 +37,21 @@ class Mobile{
 
 class AddToCart{
     items = [];
+    addProduct(product){
+        this.items.push(product);
+        this.totalOutput = `<h1>Total: ${0}</h1>`
+    }
     showTotal(){
+
         const div = document.createElement("div");
+        div.className = "divTotal";
         div.innerHTML = 
         `
         <h1>Total: ${0} </h1>
         <button>Order Now!</button>
         `
+        this.totalOutput = div.querySelector("h1");
+
         return div;
     }
 }
@@ -45,6 +63,7 @@ class ShowSingleMobile{
     addToCart(){
         console.log("add to Cart");
         console.log(this.product);
+        // new AddToCart();
     }
     show(){
        const divChild = document.createElement("div");
@@ -81,14 +100,15 @@ class ProductList{
 
     }
    showMobiles(){
-    
-     const divchild = document.createElement("div");
-     for(let item of this.products){
-        const singleMobile = new ShowSingleMobile(item);
-        const div = singleMobile.show();
-        divchild.append(div);
-     }
-     return divchild;
+   const divChild = document.createElement("div");
+   divChild.classList.add("divGeneral");
+   for(let mobile of this.products){
+    const singleMobile = new ShowSingleMobile(mobile);
+    const div = singleMobile.show();
+
+    divChild.append(div);
+   }
+   return divChild;
     }
 }
 
@@ -98,12 +118,24 @@ class Page{
        const addTOCart =  new AddToCart();
        const divTotal = addTOCart.showTotal();
        divParent.append(divTotal);
-        const productList = new ProductList();
-        const divProducts =  productList.showMobiles();
-        console.log(productList.showMobiles());
-        divParent.append(divProducts);
+       const proList = new ProductList();
+       const divProducts =  proList.showMobiles();
+       divParent.append(divProducts);
     }
 }
+
+// polymorphism mahtab
+// encapsulation Freshta
+// abstraction zahra
+// gmail.com, outlook.com, hotmail.com, yahoo.com
+// inheritance rahela
+class App{
+    static init(){
+        const shop = new Page();
+        shop.showEntirePage();
+    }
+}
+App.init();
 
 const page = new Page();
 page.showEntirePage();

@@ -173,6 +173,9 @@
   }
 }
 @layer utilities {
+  .static {
+    position: static;
+  }
   .float-start {
     float: inline-start;
   }
@@ -197,6 +200,9 @@
   .inline-block {
     display: inline-block;
   }
+  .table {
+    display: table;
+  }
   .h-screen {
     height: 100vh;
   }
@@ -208,6 +214,12 @@
   }
   .w-full {
     width: 100%;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -223,6 +235,9 @@
   }
   .justify-evenly {
     justify-content: space-evenly;
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
   }
   .gap-1\.5 {
     gap: calc(var(--spacing) * 1.5);
@@ -309,6 +324,9 @@
   .text-yellow-400 {
     color: var(--color-yellow-400);
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
@@ -328,6 +346,13 @@
 }
 @import url("../public/fonts/Yekan.ttf");
 @layer components {
+  .divGeneral {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: calc(var(--spacing) * 1.5);
+    padding: calc(var(--spacing) * 4);
+  }
   .div {
     height: fit-content;
     width: 230px;
@@ -356,7 +381,9 @@
     color: var(--color-white);
   }
   .divTotal {
+    display: flex;
     width: 100%;
+    justify-content: space-between;
     border-style: var(--tw-border-style);
     border-width: 1px;
     border-color: var(--color-black);

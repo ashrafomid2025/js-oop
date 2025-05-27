@@ -13,6 +13,9 @@
   .button {
     @apply px-4 py-3 my-3 bg-purple-600 text-white;
   } */
+  .divGeneral {
+    @apply flex justify-between p-4 gap-1.5 flex-wrap;
+  }
   .div {
     @apply text-center h-fit w-[230px] border border-green-300 p-4 rounded-md hover:border-red-500;
   }
@@ -23,6 +26,6 @@
     @apply py-3 px-4 bg-purple-500 text-white rounded-md;
   }
   .divTotal {
-    @apply border border-black p-4 text-center w-full;
+    @apply border flex justify-between border-black p-4 text-center w-full;
   }
 }
