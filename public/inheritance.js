@@ -1,73 +1,49 @@
-// property => the things you have name, age, height, gender
-// method=> the things you can do walk(), run(), sleep(), eat()
-// js => prototype
-
-// class Animal {
+// // oop
+// // property => the things you have
+// // methods=> the things you can do 
+// // inheritance
+// class Animal{
 //     name;
-//     age;
-//     wiedth;
-//     constructor(name, age, wiedth){
-//         this.name =name;
+//     constructor(name, age, gender){
+//         this.name = name;
 //         this.age = age;
-//         this.wiedth = wiedth;
+//         this.gender = gender;
 //     }
-
 //     eat(){
-//         console.log(this.name + " can eat");
+//         console.log(this.name +" can eat food");
+//     }
+    
+// }
+// class Alligator extends Animal {
+//     hunt(){
+//        console.log(this.name +" can hunt other animals"); 
 //     }
 // }
-// remove the duplication 
-// parent, super
-// derived, child
-// class Cat extends Animal{
 
-// }
-// const newCat =  new Cat("My baby cat",2, "4Kg");
-// newCat.eat();
+// const newAlligator = new Alligator("Alligator",4,"male");
+// newAlligator.eat();
+// const myNewAlligator = new Alligator("My Pet",3,"Female");
+// myNewAlligator.eat();
+// myNewAlligator.hunt();
+// prototype
 
-
-
-
-
-
-
-
-
-// encapsulation
-class Person{
-    age;
-    admin = false;
-    constructor(){
-        let name,age;
-    }
-    setAge(age){
-        
-        this.age = age; 
-    }
-    getAge(){
-        console.log("you are "+this. age+ " years old");
-    }
-    // setter 
-    setName(name){
-        if(name.length>2){
-            this.name = name
-        }
-        else{
-            this.name = "Mohammad Hussain";
-        }
-        
-    }
-    getName(){
-        if(this.admin){
-        console.log(this.name);
-        }
-        else{
-            console.log("شما اجازه دانستن نام شخص را ندارید")
-        }
+// polymorphism 
+// abstraction
+// poly => many
+// morph=> form 
+// animal 
+function Animal(age, gender){
+    this.age = age;
+    this.gender = gender;
+    let name = "Cat";
+    this.getDetails = function(){
+        console.log(`Hi my pet name is ${name} and he/she is ${this.gender} and he/she is ${this.age} years old` );
     }
 }
-
-
+const newCat = new Animal(2,"Female");
+newCat.gender = "male";
+newCat.name = "Dog";
+newCat.getDetails();
 
 
 
