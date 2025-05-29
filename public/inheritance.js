@@ -9,6 +9,7 @@
 //         this.age = age;
 //         this.gender = gender;
 //     }
+// 
 //     eat(){
 //         console.log(this.name +" can eat food");
 //     }
@@ -32,18 +33,80 @@
 // poly => many
 // morph=> form 
 // animal 
-function Animal(age, gender){
-    this.age = age;
-    this.gender = gender;
-    let name = "Cat";
+
+// inheritance 
+// encapsulation
+// 
+// poly=> many
+// morph => form
+
+// abstraction
+
+function Employees(name, job, salary){
+    this.name = name;
+    this.job = job;
+    this.salary = salary;
+    let bonus = 450;
     this.getDetails = function(){
-        console.log(`Hi my pet name is ${name} and he/she is ${this.gender} and he/she is ${this.age} years old` );
+        console.log(`I am ${this.name}, I am ${this.job} and I earn ${this.salary}`);
+        calculateSalary();
+    }
+    let calculateSalary = function(){
+        let finalSalary = salary + bonus;
+        console.log("My net salary is "+ finalSalary);
     }
 }
-const newCat = new Animal(2,"Female");
-newCat.gender = "male";
-newCat.name = "Dog";
-newCat.getDetails();
+
+const ali = new Employees("Ali","Teacher",9000);
+ali.getDetails();
+// class Animal{
+//     name;
+//     age;
+//     constructor(name,age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     eats(){
+//         console.log(this.name+" can eat meat");
+//     }
+
+// }
+// class Sheep extends Animal{
+//     eats(){
+      
+//         console.log(this.name +" can eat grain grass");
+//     }
+// }
+// const newSheep = new Sheep("My new Sheep",4);
+// newSheep.eats();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function Animal(age, gender){
+//     this.age = age;
+//     this.gender = gender;
+//     let name = "Cat";
+//     this.getDetails = function(){
+//         console.log(`Hi my pet name is ${name} and he/she is ${this.gender} and he/she is ${this.age} years old` );
+//     }
+// }
+// const newCat = new Animal(2,"Female");
+// newCat.gender = "male";
+// newCat.name = "Dog";
+// newCat.getDetails();
 
 
 
