@@ -2,18 +2,14 @@
 // way to write your code 
 // product: name, color, price, quatity, quality
 // class => 
+// api => application program interface
+// html,css, js
+// weather ap
 
 // duplication 
 // error, 
 
-class Person{
-    name;
-  lastName;
-    constructor(name,lastName){
-      this.name = name;
-      this.lastName = lastName;  
-    }
-}
+
 
 
 
@@ -39,7 +35,7 @@ class AddToCart{
     items = [];
     addProduct(product){
         this.items.push(product);
-        this.totalOutput = `<h1>Total: ${0}</h1>`
+        this.totalOutput = `<h1>Total: ${2}</h1>`
     }
     showTotal(){
 
@@ -48,7 +44,7 @@ class AddToCart{
         div.innerHTML = 
         `
         <h1>Total: ${0} </h1>
-        <button>Order Now!</button>
+        <button class ="btn">Order Now!</button>
         `
         this.totalOutput = div.querySelector("h1");
 
@@ -63,6 +59,7 @@ class ShowSingleMobile{
     addToCart(){
         console.log("add to Cart");
         console.log(this.product);
+
         // new AddToCart();
     }
     show(){
@@ -113,9 +110,10 @@ class ProductList{
 }
 
 class Page{
+    
     showEntirePage(){
        const divParent = document.getElementById("app");
-       const addTOCart =  new AddToCart();
+        const addTOCart =  new AddToCart();
        const divTotal = addTOCart.showTotal();
        divParent.append(divTotal);
        const proList = new ProductList();
@@ -124,11 +122,7 @@ class Page{
     }
 }
 
-// polymorphism mahtab
-// encapsulation Freshta
-// abstraction zahra
-// gmail.com, outlook.com, hotmail.com, yahoo.com
-// inheritance rahela
+
 class App{
     static init(){
         const shop = new Page();
@@ -137,6 +131,4 @@ class App{
 }
 App.init();
 
-const page = new Page();
-page.showEntirePage();
 
