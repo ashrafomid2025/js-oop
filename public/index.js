@@ -35,10 +35,9 @@ class AddToCart{
     items = [];
     addProduct(product){
         this.items.push(product);
-        this.totalOutput = `<h1>Total: ${2}</h1>`
+        this.totalOutput.innerHTML = `<h1>Total: ${4}</h1>`
     }
     showTotal(){
-
         const div = document.createElement("div");
         div.className = "divTotal";
         div.innerHTML = 
@@ -47,7 +46,6 @@ class AddToCart{
         <button class ="btn">Order Now!</button>
         `
         this.totalOutput = div.querySelector("h1");
-
         return div;
     }
 }
@@ -59,7 +57,7 @@ class ShowSingleMobile{
     addToCart(){
         console.log("add to Cart");
         console.log(this.product);
-
+        App.addItemToCart(this.product);
         // new AddToCart();
     }
     show(){
@@ -110,11 +108,10 @@ class ProductList{
 }
 
 class Page{
-    
     showEntirePage(){
        const divParent = document.getElementById("app");
-        const addTOCart =  new AddToCart();
-       const divTotal = addTOCart.showTotal();
+        this.cart =  new AddToCart();
+       const divTotal = this.cart.showTotal();
        divParent.append(divTotal);
        const proList = new ProductList();
        const divProducts =  proList.showMobiles();
@@ -127,6 +124,10 @@ class App{
     static init(){
         const shop = new Page();
         shop.showEntirePage();
+        this.cart = shop.cart;
+    }
+    static addItemToCart(product){
+        this.cart.addProduct(product);
     }
 }
 App.init();
